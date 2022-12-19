@@ -21,7 +21,7 @@ You have to wait until the drawing for once case is confirmed after which you ha
 curve_type is the type of motion curve from 'Constant Accelaration', 'Simple Harmonic' or 'Cyclodial Motion'
 segment_type is the displacement type from rise, dwell and return
 
-Sample Outputs:
+# Sample Outputs:
 
 ![1](https://user-images.githubusercontent.com/60822455/208420276-f65fd51c-391a-4d71-aaf5-6df71c4d68c1.PNG)
 

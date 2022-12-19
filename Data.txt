@@ -1,0 +1,51 @@
+To use the program, modify the Data.txt file in the same folder as CamFollower.py. The name and location of the file must not be changed.
+To define the case. You must first have a line with character '#'. This indicates the start of a new case.
+In the next line you have to define Rb and Rf. You have to put character "|" after each value. The values must be in a particular order.
+From this line you can start defining the segment motions.The format is as below for each case:
+
+   #
+   Rb|Rf|
+   angle_start|angle_end|segment_type|curve_type|displacement|
+   angle_start|angle_end|segment_type|curve_type|displacement|
+   .
+   .
+   .
+   angle_start|angle_end|segment_type|curve_type|displacement|
+
+Make sure that the lines are in ascending order. angle_end of one line must be equal to angle_start of the next one. The sum of rise displacements must be equal
+to sum of return displacements. Otherwise, the cam profile wont be a closed curve.
+Although not necessary, but it is advisable to have rise motions at the start, a dwell after the rise and finally return motions.
+Also try to not have large displacements in small angle ranges. As, this can result in impossible meshes, that go inside the cam profile.
+You can modify WIDTH and HEIGHT in CamFollower.py to change the width and height of turtle window
+
+You have to wait until the drawing for once case is confirmed after which you have to press "Enter" with command line in focus to move onto the next case.
+
+curve_type is the type of motion curve from 'Constant Accelaration', 'Simple Harmonic' or 'Cyclodial Motion'
+segment_type is the displacement type from rise, dwell and return
+#
+1.5|0.5|
+0|120|rise|Cyclodial Motion|1|
+120|240|dwell|
+240|360|return|Constant Accelaration|1|
+#
+1.75|0.25|
+0|240|rise|Simple Harmonic Motion|1|
+240|300|dwell|
+300|320|return|Cyclodial Motion|0.5|
+320|360|return|Constant Accelaration|0.5|
+#
+3|2|
+0|60|rise|Cyclodial Motion|1|
+60|120|rise|Simple Harmonic Motion|1|
+120|200|rise|Cyclodial Motion|1|
+120|240|dwell|
+240|360|return|Constant Accelaration|3|
+#
+4|0.5|
+0|60|rise|Cyclodial Motion|1|
+60|100|rise|Constant Accelaration|1.5|
+100|170|rise|Simple Harmonic Motion|0.5|
+170|190|dwell|
+190|240|return|Constant Accelaration|1|
+240|300|return|Simple Harmonic Motion|1.5|
+300|360|return|Simple Harmonic Motion|0.5|
